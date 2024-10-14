@@ -1,0 +1,38 @@
+https://youtu.be/oeni_9g7too
+
+Spring Security
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+spring.security.user.name=admin
+spring.security.user.password=admin123
+
+
+@Configuration
+@EnableWebSecurity
+public class WebConfig {
+
+    @Bean
+    public SecurityFilterChain getSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
+       return httpSecurity.csrf(customizer -> customizer.disable())
+               .authorizeHttpRequests(req -> req.anyRequest().authenticated())
+               .formLogin(Customizer.withDefaults())
+               .httpBasic(Customizer.withDefaults())
+               .build();
+    }
+}
+
+
+
+ @Bean
+    public UserDetailsService getInMemoryUsers()
+    {
+        List<UserDetails> usersList = Arrays.asList(
+                 User.withDefaultPasswordEncoder().username("Abhishek").password("1234").roles("ADMIN").build(),
+                User.withDefaultPasswordEncoder().username("Ananya").password("1234").roles("FACULTY").build()
+        ) ;
+        return new InMemoryUserDetailsManager(usersList);
+    }

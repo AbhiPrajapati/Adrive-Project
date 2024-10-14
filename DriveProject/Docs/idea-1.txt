@@ -1,0 +1,17 @@
+
+I need to make a drive where users can upload their data and can download their data .
+
+Required functionality for version 1 would be 
+
+Login and SignUp
+Upload data , Download Data
+Logout
+
+- Backed : Spring Boot 
+- React Js
+
+
+Login & signup :  09-oct-2024 - 10-Oct-2024
+Upload Data and Download Data : 11-Oct-2024
+
+12-Oct-2024 - 13-Oct-2024 : Frontend Using React.
