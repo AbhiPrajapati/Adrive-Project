@@ -3,9 +3,11 @@ package com.adrive.ADrive.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -29,8 +31,9 @@ public class WebConfig {
     @Bean
     public SecurityFilterChain getSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
        return httpSecurity.csrf(customizer -> customizer.disable())
-               .authorizeHttpRequests(req -> req.anyRequest().authenticated())
-               .formLogin(Customizer.withDefaults())
+               .authorizeHttpRequests(req -> req.requestMatchers("/register","/login").permitAll().
+                               anyRequest().authenticated())
+               //.formLogin(Customizer.withDefaults())
                .httpBasic(Customizer.withDefaults())
                .logout(Customizer.withDefaults())
                .build();
@@ -53,6 +56,11 @@ public class WebConfig {
         daoAuthenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
         daoAuthenticationProvider.setUserDetailsService(userDetailService);
         return daoAuthenticationProvider;
+    }
+
+    @Bean
+    public AuthenticationManager getAuthenticationManager(AuthenticationConfiguration conf) throws Exception {
+        return  conf.getAuthenticationManager();
     }
 
 }
