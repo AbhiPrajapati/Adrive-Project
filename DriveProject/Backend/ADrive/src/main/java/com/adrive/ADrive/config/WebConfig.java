@@ -17,6 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,15 +28,19 @@ public class WebConfig {
 
     @Autowired
     private UserDetailsService userDetailService;
+
+    @Autowired
+    private JWTFilter JwtFilter;
     
     @Bean
     public SecurityFilterChain getSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
        return httpSecurity.csrf(customizer -> customizer.disable())
-               .authorizeHttpRequests(req -> req.requestMatchers("/register","/login").permitAll().
+               .authorizeHttpRequests(req -> req.requestMatchers("register","login").permitAll().
                                anyRequest().authenticated())
                //.formLogin(Customizer.withDefaults())
                .httpBasic(Customizer.withDefaults())
                .logout(Customizer.withDefaults())
+               .addFilterBefore(JwtFilter, UsernamePasswordAuthenticationFilter.class)
                .build();
     }
 

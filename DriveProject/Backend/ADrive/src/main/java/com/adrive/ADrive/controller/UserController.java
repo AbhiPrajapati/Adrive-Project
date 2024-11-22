@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping()
 public class UserController {
@@ -24,6 +26,12 @@ public class UserController {
      public String login(@RequestBody Users users)
      {
          return userService.login(users);
+     }
+
+     @GetMapping("/users")
+     public List<Users> getAllUsers()
+     {
+         return userService.getAllUsers();
      }
 
 

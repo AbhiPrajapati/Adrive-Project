@@ -12,6 +12,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -39,5 +41,10 @@ public class UserServiceImpl implements UserService {
         users.setPassword(encodedPassword);
         userRepository.save(users);
         return  ResponseEntity.ok(users);
+    }
+
+    @Override
+    public List<Users> getAllUsers() {
+        return userRepository.findAll();
     }
 }
