@@ -48,6 +48,11 @@ function Login(props){
     }
   };
 
+  const handleSignUpRedirect = () => {
+    navigate("/signup"); // Redirect to the Sign Up page
+  };
+
+
   
   return(
    <div>
@@ -70,7 +75,10 @@ function Login(props){
             onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}    
             type='password' placeholder='password' />
           </div>
+          <div className="button-container flex justify-between mt-3">
           <button className='btn mt-3' onClick={handleLogin}>login</button>
+          <button className='btn mt-3' onClick={handleSignUpRedirect}>Sign Up</button>
+          </div>
         </form>
         {error && <p className="text-red-500">{error}</p>} 
       </div>

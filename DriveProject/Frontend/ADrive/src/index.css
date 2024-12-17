@@ -44,10 +44,23 @@
   background-color: rgb(255, 255, 255);
 }
 
-.btn{
+.btn {
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   border: solid black;
-  padding: 10px 50px;
+  width: 140px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  padding: 0; /* Remove padding to maintain fixed size */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 16px; /* Optional: Set font size */
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(230, 230, 230); /* Change to a light gray on hover */
+  border-color: rgb(150, 150, 150); /* Optional: Change border color on hover */
 }
