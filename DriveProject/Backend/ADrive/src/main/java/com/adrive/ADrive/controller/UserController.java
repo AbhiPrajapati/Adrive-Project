@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping()
+@RequestMapping
 public class UserController {
 
     @Autowired
@@ -20,10 +22,16 @@ public class UserController {
          return userService.createUsers(users);
      }
 
-     @GetMapping("/login")
+     @PostMapping("/login")
      public String login(@RequestBody Users users)
      {
          return userService.login(users);
+     }
+
+     @GetMapping("/users")
+     public List<Users> getAllUsers()
+     {
+         return userService.getAllUsers();
      }
 
 

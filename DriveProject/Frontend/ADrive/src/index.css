@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.open-sans-font {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.login-card{
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  border: solid black 2px;
+  border-radius: 2%;
+  margin-top: 50px;
+  height: 500px;
+  width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input{
+   padding: 20px;
+   width:300px;
+   height: 20px;
+   margin-top: 10px;
+   border: solid black;
+   text-align: center; 
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+
+.login-form{
+  background-color: rgb(255, 255, 255);
+}
+
+.btn{
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: solid black;
+  padding: 10px 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
