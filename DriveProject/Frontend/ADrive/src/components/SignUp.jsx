@@ -22,7 +22,7 @@ function SignUp(props) {
         password: credentials.password
       };
 
-      const response = await axios.post("http://localhost:8080/signup", payload, {
+      const response = await axios.post("http://localhost:8080/register", payload, {
         headers: {
           "Content-Type": "application/json"
         }

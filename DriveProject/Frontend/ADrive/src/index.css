@@ -48,19 +48,185 @@
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   border: solid black;
-  width: 140px; /* Set a fixed width */
-  height: 50px; /* Set a fixed height */
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  padding: 0; /* Remove padding to maintain fixed size */
+  width: 140px; 
+  height: 50px; 
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  padding: 0; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer; /* Change cursor to pointer on hover */
-  font-size: 16px; /* Optional: Set font size */
+  cursor: pointer; 
+  font-size: 16px; 
   transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: rgb(230, 230, 230); /* Change to a light gray on hover */
-  border-color: rgb(150, 150, 150); /* Optional: Change border color on hover */
+  background-color: rgb(230, 230, 230); 
+  border-color: rgb(150, 150, 150); 
+}
+
+.vertical-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  background-color: #f8f9fa; /* Light gray background */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow */
+  padding: 10px; /* Add some padding */
+  width: 80px; /* Set a compact width for the menu */
+  height: 100vh; /* Full height */
+  position: fixed; /* Fix to the left */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+}
+
+.menu-item {
+  display: flex; /* Use flexbox to align icon and text */
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  margin: 10px 0; /* Space between items */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+  padding: 10px; /* Padding for better click area */
+  width: 100%; /* Make the item take full width */
+  height: 60px; /* Fixed height for menu items */
+  border-radius: 5px; /* Rounded corners */
+  background-color: transparent; /* Default background */
+  text-align: center; /* Center text */
+}
+
+.menu-item:hover {
+  background-color: #e2e6ea; /* Darker gray on hover */
+}
+
+.menu-item.active {
+  background-color: #d1d1d1; /* Change background color for active item */
+}
+
+.icon {
+  font-size: 24px; /* Icon size */
+  color: #495057; /* Dark gray color for icons */
+}
+
+.menu-text {
+  font-size: 12px; /* Font size for text */
+  color: #495057; /* Dark gray color for text */
+  margin-top: 5px; /* Space between icon and text */
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100vh; /* Full height */
+  background-color: #eaf3fc; /* Your theme color */
+  color: rgb(2, 0, 0); /* Text color */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.profile-pic-preview {
+  width: 150px; /* Width of the preview */
+  height: 150px; /* Height of the preview */
+  border-radius: 10%; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  border: 2px solid white; /* Border for the preview */
+  display: flex;
+  align-items: center; /* Center the image vertically */
+  justify-content: center; /* Center the image horizontally */
+  margin-bottom: 20px; /* Space below the preview */
+  background-color: rgba(255, 255, 255, 0.8); /* Light background for better visibility */
+}
+
+.profile-pic {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Cover the area while maintaining aspect ratio */
+}
+
+.placeholder-pic {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  color: #5d82aa; /* Theme color for placeholder text */
+  font-weight: bold; /* Bold text */
+}
+
+.profile-form {
+  width: 100%; /* Full width of the container */
+  max-width: 600px; /* Maximum width for the form */
+  background-color: rgba(255, 255, 255, 0.9); /* Light background for the form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-row {
+  display: flex; /* Use flexbox for row layout */
+  justify-content: space-between; /* Space between the inputs */
+  margin-bottom: 15px; /* Space below each row */
+}
+
+.form-group {
+  flex: 1; /* Allow the input groups to grow */
+  margin-right: 10px; /* Space between the input groups */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack label and input vertically */
+}
+.form-group:last-child {
+  margin-right: 0; /* Remove margin for the last input in the row */
+}
+
+label {
+  display: block; /* Block display for labels */
+}
+
+.input {
+  width: 100%; /* Full width for inputs */
+  padding: 20px; /* Padding for inputs */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+}
+
+.btn {
+  background-color: #eaf3fc; /* Green color for the button */
+  color: rgb(9, 57, 251); /* Text color */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.btn:hover {
+  background-color: rgb(59, 140, 211);
+  color: white; /* Darker green on hover */
+}
+
+.label{
+  color: rgb(16, 42, 65);
+  font-size: 50px;
+}
+
+.upload-pic{
+  padding : 30px;
+}
+
+.upload-pic-group {
+  display: flex; /* Use flexbox for the upload picture group */
+  flex-direction: column; /* Stack label and input vertically */
+  margin-bottom: 15px; /* Space below the upload picture group */
+}
+
+.upload-pic-group input {
+  margin-top: 5px; /* Space between label and input */
 }
