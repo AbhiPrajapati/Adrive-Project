@@ -230,3 +230,34 @@ label {
 .upload-pic-group input {
   margin-top: 5px; /* Space between label and input */
 }
+
+.title-text{
+  margin-top: 20vh;
+  font-size: 100px;
+  color: #5d9edf; /* Theme color for placeholder text */
+  font-weight: 700;
+}
+
+.button-container{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; 
+}
+
+.extra-width{
+  padding-left: 170px ;
+  padding-right: 170px ;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-text{
+  font-size: 30px;
+  font-weight: 300;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #495057;
+}
